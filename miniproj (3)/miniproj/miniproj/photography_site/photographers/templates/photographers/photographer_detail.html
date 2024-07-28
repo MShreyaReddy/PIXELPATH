@@ -1,0 +1,80 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>{{ photographer.name }}</title>
+</head>
+<body>
+    <h1>{{ photographer.name }}</h1>
+    <p>{{ photographer.bio }}</p>
+    <img src="{{ photographer.profile_picture.url }}" alt="{{ photographer.name }}">
+    <a href="{{ photographer.portfolio_url }}" target="_blank">View Portfolio</a>
+    <h2>Book {{ photographer.name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ photographer.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        p {
+            color: #34495e;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ photographer.name }}</h1>
+    <p>{{ photographer.bio }}</p>
+    <img src="{{ photographer.profile_picture.url }}" alt="{{ photographer.name }}">
+    <a href="{{ photographer.portfolio_url }}" target="_blank">View Portfolio</a>
+    <h2>Book {{ photographer.name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %} About Us {% endblock title %}
+
+{% block body %}
+<style>
+    {% load static %}
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-y: auto; /* Allow vertical scrolling */
+        font-family: Arial, sans-serif;
+    }
+
+    .about-page {
+        background-image: url('{% static "background.jpeg" %}'); /* Ensure correct path to your image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+        border: 2px solid #007BFF;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        max-width: 800px;
+        width: 100%;
+        text-align: center; /* Center align text within the container */
+    }
+
+    h1 {
+        color: #007BFF;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+    }
+
+    p {
+        text-align: justify;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        color: #333;
+    }
+
+    .container p:last-child {
+        margin-bottom: 0;
+    }
+</style>
+
+<div class="about-page">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to PIXELPATH! We are a dedicated team of professional photographers passionate about capturing perfect moments. Our mission is to provide top-notch photography services that cater to all your needs, whether it’s for a special event, a personal photoshoot, or a corporate function.</p>
+        <p>Our photographers are highly skilled and experienced in various styles and techniques, ensuring that we deliver high-quality images that exceed your expectations. We believe in the power of photography to tell stories, evoke emotions, and create lasting memories.</p>
+        <p>At PIXELPATH, we value customer satisfaction above all. We work closely with our clients to understand their vision and bring it to life through our lenses. Our commitment to excellence and attention to detail set us apart in the industry.</p>
+        <p>Thank you for choosing us to capture your precious moments. We look forward to working with you and creating beautiful images that you will cherish forever.</p>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{%block title %} Register {% endblock title %}
+{% block body %}
+    <style>
+        .des {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            margin-right: 90px;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #ffffff;
+            border: 2px solid #1e90ff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            width: 400px;
+        
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        form:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        form p {
+            margin: 15px 0;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select, input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            border-color: #1e90ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+        }
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #104e8b;
+        }
+    </style>
+<div class="des">
+    <h1>Register as a Photographer</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>
+{%endblock body%}

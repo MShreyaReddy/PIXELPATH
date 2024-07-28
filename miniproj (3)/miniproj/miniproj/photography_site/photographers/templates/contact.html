@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{%block title %} Contact {%endblock title %}
+{%block body %} 
+<style>
+    
+    /* {% comment %} body {
+        background-color: #f0f8ff; 
+        font-family: Arial, sans-serif;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    } {% endcomment %} */
+
+    .form-wrapper {
+        border: 1px solid #87ceeb; 
+        padding: 20px;
+        margin: 50px;
+        background-color: #ffffff; 
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    .form-label {
+        color: #4682b4; 
+    }
+
+    .form-control {
+        border: 1px solid #87ceeb; 
+        background-color: #e6f2ff; 
+        color: #333;
+    }
+
+    .form-control:focus {
+        border-color: #4682b4; /* Medium blue border when focused */
+        box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Light blue shadow when focused */
+    }
+
+    .form-check-input:checked {
+        background-color: #4682b4; /* Medium blue for checked checkbox */
+        border-color: #4682b4;
+    }
+
+    .btn-primary {
+        background-color: #1e90ff; /* Dodger blue for button */
+        border-color: #1e90ff;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background-color: #4682b4; /* Medium blue on hover */
+        border-color: #4682b4;
+    }
+     .head{
+        text-align:center;
+        
+    } 
+</style>
+
+<body>
+<div class="form-wrapper">
+    <h3 class="head">Contact here</h3>
+    <form class="row g-3" method="POST" action="\contact">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="fullname" class="form-label">FullName</label>
+            <input type="text" class="form-control" id="fullname" name="fullname">
+        </div>
+       
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        
+        <div class="col-6">
+            <label for="mobile" class="form-label">MobileNo</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" >
+        </div>
+        
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Contactus</label>
+            <input type="text" class="form-control" id="contact" name="contact">
+        </div>
+         <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+    {%endblock body %}
+{%block footer%} {%endblock footer%}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings for {{ photographer.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #007BFF;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bookings for {{ photographer.name }}</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.customer_name }} - {{ booking.date }} at {{ booking.time }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

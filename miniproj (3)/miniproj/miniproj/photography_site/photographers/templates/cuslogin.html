@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{%block title %} Customer Login {%endblock title %}
+
+{%block body %} 
+
+<!-- <style>
+  /* body {
+      background-color: #f8f9fa;
+  } */
+  .form-wrapper {
+        border: 1px solid #87ceeb; /* Light blue border */
+        padding: 20px;
+        margin: 50px;
+        background-color: #ffffff; /* White background for form wrapper */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+  .form-label {
+      margin-bottom: 0.5rem;
+  }
+  .form-control, .form-check-input {
+      margin-bottom: 0.5rem;
+      border: 1px solid #007bff;
+  }
+  .form-control:focus, .form-check-input:focus {
+      border-color: #0056b3;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  .btn-primary {
+      margin-top: 1rem;
+      background-color: #007bff;
+      border-color: #007bff;
+  }
+  .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+  }
+  .form-text {
+      color: #6c757d;
+  }
+  .mb-3 {
+      margin-bottom: 0.5rem !important;
+  }
+</style>
+<form>
+  <div class="form-wrapper">
+  <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+<style>
+    /* Minimalist blue color scheme */
+    .cus {
+        background-color: #f0f8ff; /* Light blue background */
+        font-family: Arial, sans-serif;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    } 
+
+    .form-wrapper {
+        border: 1px solid #87ceeb; /* Light blue border */
+        padding: 20px;
+        margin: 50px;
+        background-color: #ffffff; /* White background for form wrapper */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    .form-label {
+        color: #4682b4; /* Medium blue for labels */
+    }
+
+    .form-control {
+        border: 1px solid #87ceeb; /* Light blue border for input fields */
+        background-color: #e6f2ff; /* Very light blue background for input fields */
+        color: #333;
+    }
+
+    .form-control:focus {
+        border-color: #4682b4; /* Medium blue border when focused */
+        box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Light blue shadow when focused */
+    }
+
+    .form-check-input:checked {
+        background-color: #4682b4; /* Medium blue for checked checkbox */
+        border-color: #4682b4;
+    }
+
+    .btn-primary {
+        background-color: #1e90ff; /* Dodger blue for button */
+        border-color: #1e90ff;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background-color: #4682b4; /* Medium blue on hover */
+        border-color: #4682b4;
+    }
+    /* .head{
+        text-align:center;
+        
+    } */
+</style>
+
+<div class="cus">
+<div class="form-wrapper">
+    <h3 class="head">Hey there..! Plz fill this out</h3>
+    <form class="row g-3" method="POST" action="\cuslogin">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="fullname" class="form-label">FullName</label>
+            <input type="text" class="form-control" id="fullname" name="fullname">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" name="password">
+        </div>
+       <div class="col-12">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>
+</div>
+    {%endblock body %}
